@@ -71,7 +71,7 @@
 
    git branch --set-upstream-to [remote]/[branch]
 
-# Set the 'branch_name' to set the default remote repository for that branch
+# Set the default remote repository for the branch 'branch_name'
 
    git branch [branch_name] --set-upstream-to [remote]/[branch]
 
