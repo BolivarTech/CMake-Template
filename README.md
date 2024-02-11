@@ -136,4 +136,6 @@ cmake -DCMAKE_BUILD_TYPE=Debug -DENABLE_COVERAGE=ON ..
 cmake --build . --config Debug --target coverage
 ```
 
-For more info about CMake see [here](./README_cmake.md).
+For more info about [CMake](./README_cmake.md) see on link.
+
+A convenient [Git Command Line Cheat Sheet](./Git_command_line_cheat_sheet.md) is available on the link.
