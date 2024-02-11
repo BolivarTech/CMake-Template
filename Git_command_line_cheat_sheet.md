@@ -67,6 +67,14 @@
 
    git remote show origin
 
+# Set the default configured remote for your current branch
+
+   git branch --set-upstream-to [remote]/[branch]
+
+# Set the 'branch_name' to set the default remote repository for that branch
+
+   git branch [branch_name] --set-upstream-to [remote]/[branch]
+
 # To pull from a specific remote
 
    git pull <Name Remote-1>
