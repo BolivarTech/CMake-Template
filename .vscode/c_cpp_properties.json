@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "name": "vsc-template",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/app/**",
+                "${workspaceFolder}/src/**",
+                "${workspaceFolder}/src/svpwm/**",
+                "${workspaceFolder}/tests/**"
+            ],
+            "defines": [
+            ],
+            "compilerPath": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "windows-msvc-x64",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/**",
+                    "${workspaceFolder}/app/**",
+                    "${workspaceFolder}/src/**",
+                    "${workspaceFolder}/src/svpwm/**",
+                    "${workspaceFolder}/tests/**"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${workspaceRoot}/.vscode/browse.vc.db"
+            }
+        }
+    ],
+    "version": 4
+}
