@@ -1,7 +1,7 @@
 # Template For C++ Projects
 
 ![C++](https://img.shields.io/badge/C%2B%2B-11%2F14%2F17%2F20%2F23-blue)
-![License](https://img.shields.io/badge/License-GNU-blue)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
 This is a template for C++ projects. What you get:
 
