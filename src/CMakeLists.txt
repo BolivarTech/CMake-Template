@@ -1,1 +1,1 @@
-add_subdirectory(svpwm)
+add_subdirectory(library)

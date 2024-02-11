@@ -1,9 +1,7 @@
 # Template For C++ Projects
 
 ![C++](https://img.shields.io/badge/C%2B%2B-11%2F14%2F17%2F20%2F23-blue)
-![License](https://camo.githubusercontent.com/890acbdcb87868b382af9a4b1fac507b9659d9bf/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667)
-![Linux Build](https://github.com/franneck94/CppProjectTemplate/workflows/Ubuntu%20CI%20Test/badge.svg)
-[![codecov](https://codecov.io/gh/franneck94/CppProjectTemplate/branch/master/graph/badge.svg)](https://codecov.io/gh/franneck94/CppProjectTemplate)
+![License](https://img.shields.io/badge/License-GNU-blue)
 
 This is a template for C++ projects. What you get:
 
@@ -20,13 +18,15 @@ This is a template for C++ projects. What you get:
 - Code documentation with [Doxygen](https://doxygen.nl/) and [Github Pages](https://franneck94.github.io/CppProjectTemplate/)
 - Tooling: Clang-Format, Cmake-Format, Clang-tidy, Sanitizers
 
+This project is provided "AS IS", no warranty, no responsibilities, no more documentation that the one included in this repository, but the scripts are so simples that it don't needed. ![winking](/images/winking.png)
+
 ## Structure
 
 ``` text
 ├── CMakeLists.txt
 ├── app
 │   ├── CMakesLists.txt
-│   └── main.cc
+│   └── main.cpp
 ├── cmake
 │   └── cmake modules
 ├── docs
@@ -37,31 +37,66 @@ This is a template for C++ projects. What you get:
 │   ├── ...
 ├── src
 │   ├── CMakesLists.txt
-│   ├── my_lib.h
-│   └── my_lib.cc
+│   ├── library.h
+│   └── library.cpp
 └── tests
     ├── CMakeLists.txt
-    └── main.cc
+    └── main.cpp
 ```
 
 Library code goes into [src/](src/), main program code in [app/](app) and tests go in [tests/](tests/).
 
 ## Software Requirements
 
-- CMake 3.21+
+- CMake 3.27+
 - GNU Makefile
 - Doxygen
 - Conan or VCPKG
-- MSVC 2017 (or higher), G++9 (or higher), Clang++9 (or higher)
+- MSVC 2022 (or higher), G++9 (or higher), Clang++9 (or higher)
 - Optional: Code Coverage (only on GNU|Clang): lcov, gcovr
 - Optional: Makefile, Doxygen, Conan, VCPKG
+  
+### Windows
+
+Chocolatey is a repository and packages management for Windows, it is like apt and yam on linux environments, making really easy the automatic packages install and administration on windows following DevOps automation approaches.
+
+[Install Chocolatey](https://chocolatey.org/install#individual) is a little more complicated and is recommended follow the procedure on the link, but on summary the procedure is the follow.
+
+1. Open PowerShell on administrative privileges (*Run as Administrator*)
+2. With PowerShell, you must ensure *Get-ExecutionPolicy* is not *Restricted*. We suggest using *Bypass* to bypass the policy to get things installed or *AllSigned* for quite a bit more security.
+3. Run *Get-ExecutionPolicy*. If it returns *Restricted*, then run *Set-ExecutionPolicy AllSigned* or *Set-ExecutionPolicy Bypass -Scope Process*.
+4. Now run the following PowerShell command:
+
+```PowerShell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+5. Paste the copied text into your shell and press Enter.
+6. Wait a few seconds for the command to complete.
+7. If you don't see any errors, you are ready to use Chocolatey! Type choco or choco -? now, or see Getting Started for usage instructions.
+
+Now that Chocolatey is installed on your system, we can proceed to install the other dependencies using PowerShell.
+
+To install Git, Make, LLVN, Doxygen and Python 3.12 used the follow command:
+
+```PowerShell
+choco install git make llvm doxygen.install python312 -y
+```
+
+To install cmake some parameters needs to be passed as follow:
+
+```PowerShell
+choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System DESKTOP_SHORTCUT_REQUESTED=1 ALLUSERS=1' -y
+```
+
+If you wants more information about Chocolatey is recommended read the [official documentation](https://docs.chocolatey.org/en-us) page.
 
 ## Building
 
 First, clone this repo and do the preliminary work:
 
 ```shell
-git clone --recursive https://github.com/franneck94/CppProjectTemplate
+git clone https://github.com/BolivarTech/CMake-Template
 make prepare
 ```
 

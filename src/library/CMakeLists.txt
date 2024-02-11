@@ -1,6 +1,6 @@
 # Sources and Headers
-set(LIBRARY_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/svpwm.cpp")
-set(LIBRARY_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/svpwm.h")
+set(LIBRARY_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/library.cpp")
+set(LIBRARY_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/library.h")
 set(LIBRARY_INCLUDES "./" "${CMAKE_BINARY_DIR}/configured_files/include")
 
 # svpwm Library

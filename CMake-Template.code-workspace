@@ -6,7 +6,12 @@
 	],
 	"settings": {
 		"cSpell.words": [
-			"svpwm"
+			"choco",
+			"Doxyfile",
+			"Doxygen",
+			"MSVC",
+			"svpwm",
+			"VCPKG"
 		]
 	}
 }
