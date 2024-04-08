@@ -87,6 +87,7 @@ elseif(USE_VCPKG)
 else(USE_CPM)
     message(STATUS "Using CPM")
     include(CPM)
+	cpmaddpackage("gh:TheLartians/Ccache.cmake@1.2.5")
     cpmaddpackage("gh:catchorg/Catch2@3.5.2")
 endif()
 
