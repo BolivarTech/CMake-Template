@@ -42,6 +42,7 @@
 | git config --global --add  branch.autoSetupMerge simple | Automatically configuring an upstream branch when its name won't match the local branch |
 | git config --global --add push.autoSetupRemote true | Assume --set-upstream on default push when no upstream tracking exists for the current branch  |
 | git config --global --add push.default current | Push the current branch to update a branch with the same name on the receiving end. Works in both central and non-central workflows. |
+| git config --global init.defaultBranch <name> | Configure the initial branch <name> to use in all of your new repositories. |
 
 ## Multiple Remotes
 
