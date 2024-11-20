@@ -8,7 +8,7 @@ BUILD_DIR := build
 DOC_DIR := docs
 BUILD_TYPE ?= Debug
 
-all: prepare cmake
+all: prepare cmake gen_docs
 
 setup:
 	sudo apt-get install gcc g++ cmake make doxygen git llvm pkg-config curl zip unzip tar python3-dev clang-format clang-tidy
