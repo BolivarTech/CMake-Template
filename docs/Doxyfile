@@ -1,3 +1,8 @@
+# Config File Created by Julian Bolivar
+# 
+# Version 1.0.0
+# Date: 2023/06/01
+#
 # Configuration for Doxygen for use with CMake
 # Only options that deviate from the default are included
 # To create a new Doxyfile containing all available options, call `doxygen -g`
@@ -13,20 +18,29 @@ PROJECT_LOGO            =
 OUTPUT_DIRECTORY        = ./
 OUTPUT_LANGUAGE         = English
 MARKDOWN_SUPPORT        = YES
+MARKDOWN_ID_STYLE       = DOXYGEN
 
 #---------------------------------------------------------------------------
 # Build related configuration options
 #---------------------------------------------------------------------------
 EXTRACT_ALL             = YES
 RECURSIVE               = YES
-GENERATE_HTML           = YES
-GENERATE_LATEX          = NO
+GENERATE_HTML           = NO
+
+#---------------------------------------------------------------------------
+# Latex Build related configuration options
+#---------------------------------------------------------------------------
+GENERATE_LATEX          = YES
+USE_PDFLATEX            = YES
+PDF_HYPERLINKS          = YES
+PAPER_TYPE              = letter
 
 #---------------------------------------------------------------------------
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
-INPUT                  =    ../src \
-INPUT                       ../include
+FULL_PATH_NAMES        = NO
+INPUT                  = ../src \
+INPUT                    ../app
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = *.c \
                          *.cc \
@@ -35,3 +49,172 @@ FILE_PATTERNS          = *.c \
                          *.hpp \
                          *.md \
                          *.txt
+
+#---------------------------------------------------------------------------
+# Doxygen related configuration options
+#---------------------------------------------------------------------------
+
+# The size of the symbol lookup cache can be set using LOOKUP_CACHE_SIZE. This
+# cache is used to resolve symbols given their name and scope. Since this can be
+# an expensive process and often the same symbol appears multiple times in the
+# code, Doxygen keeps a cache of pre-resolved symbols. If the cache is too small
+# Doxygen will become slower. If the cache is too large, memory is wasted. The
+# cache size is given by this formula: 2^(16+LOOKUP_CACHE_SIZE). The valid range
+# is 0..9, the default is 0, corresponding to a cache size of 2^16=65536
+# symbols. At the end of a run Doxygen will report the cache usage and suggest
+# the optimal cache size from a speed point of view.
+# Minimum value: 0, maximum value: 9, default value: 0.
+
+LOOKUP_CACHE_SIZE      = 2
+
+# The NUM_PROC_THREADS specifies the number of threads Doxygen is allowed to use
+# during processing. When set to 0 Doxygen will based this on the number of
+# cores available in the system. You can set it explicitly to a value larger
+# than 0 to get more control over the balance between CPU load and processing
+# speed. At this moment only the input processing can be done using multiple
+# threads. Since this is still an experimental feature the default is set to 1,
+# which effectively disables parallel processing. Please report any issues you
+# encounter. Generating dot graphs in parallel is controlled by the
+# DOT_NUM_THREADS setting.
+# Minimum value: 0, maximum value: 32, default value: 1.
+
+NUM_PROC_THREADS       = 4
+
+# If the TIMESTAMP tag is set different from NO then each generated page will
+# contain the date or date and time when the page was generated. Setting this to
+# NO can help when comparing the output of multiple runs.
+# Possible values are: YES, NO, DATETIME and DATE.
+# The default value is: NO.
+
+TIMESTAMP              = YES
+
+# The GENERATE_TODOLIST tag can be used to enable (YES) or disable (NO) the todo
+# list. This list is created by putting \todo commands in the documentation.
+# The default value is: YES.
+
+GENERATE_TODOLIST      = YES
+
+# The GENERATE_TESTLIST tag can be used to enable (YES) or disable (NO) the test
+# list. This list is created by putting \test commands in the documentation.
+# The default value is: YES.
+
+GENERATE_TESTLIST      = YES
+
+# The GENERATE_BUGLIST tag can be used to enable (YES) or disable (NO) the bug
+# list. This list is created by putting \bug commands in the documentation.
+# The default value is: YES.
+
+GENERATE_BUGLIST       = YES
+
+# The GENERATE_DEPRECATEDLIST tag can be used to enable (YES) or disable (NO)
+# the deprecated list. This list is created by putting \deprecated commands in
+# the documentation.
+# The default value is: YES.
+
+GENERATE_DEPRECATEDLIST= YES
+
+#---------------------------------------------------------------------------
+# Configuration options related to warning and progress messages
+#---------------------------------------------------------------------------
+
+# The QUIET tag can be used to turn on/off the messages that are generated to
+# standard output by Doxygen. If QUIET is set to YES this implies that the
+# messages are off.
+# The default value is: NO.
+
+QUIET                  = NO
+
+# The WARNINGS tag can be used to turn on/off the warning messages that are
+# generated to standard error (stderr) by Doxygen. If WARNINGS is set to YES
+# this implies that the warnings are on.
+#
+# Tip: Turn warnings on while writing the documentation.
+# The default value is: YES.
+
+WARNINGS               = YES
+
+# If the WARN_IF_UNDOCUMENTED tag is set to YES then Doxygen will generate
+# warnings for undocumented members. If EXTRACT_ALL is set to YES then this flag
+# will automatically be disabled.
+# The default value is: YES.
+
+WARN_IF_UNDOCUMENTED   = YES
+
+# If the WARN_IF_DOC_ERROR tag is set to YES, Doxygen will generate warnings for
+# potential errors in the documentation, such as documenting some parameters in
+# a documented function twice, or documenting parameters that don't exist or
+# using markup commands wrongly.
+# The default value is: YES.
+
+WARN_IF_DOC_ERROR      = YES
+
+# If WARN_IF_INCOMPLETE_DOC is set to YES, Doxygen will warn about incomplete
+# function parameter documentation. If set to NO, Doxygen will accept that some
+# parameters have no documentation without warning.
+# The default value is: YES.
+
+WARN_IF_INCOMPLETE_DOC = YES
+
+# This WARN_NO_PARAMDOC option can be enabled to get warnings for functions that
+# are documented, but have no documentation for their parameters or return
+# value. If set to NO, Doxygen will only warn about wrong parameter
+# documentation, but not about the absence of documentation. If EXTRACT_ALL is
+# set to YES then this flag will automatically be disabled. See also
+# WARN_IF_INCOMPLETE_DOC
+# The default value is: NO.
+
+WARN_NO_PARAMDOC       = NO
+
+# If WARN_IF_UNDOC_ENUM_VAL option is set to YES, Doxygen will warn about
+# undocumented enumeration values. If set to NO, Doxygen will accept
+# undocumented enumeration values. If EXTRACT_ALL is set to YES then this flag
+# will automatically be disabled.
+# The default value is: NO.
+
+WARN_IF_UNDOC_ENUM_VAL = NO
+
+# If the WARN_AS_ERROR tag is set to YES then Doxygen will immediately stop when
+# a warning is encountered. If the WARN_AS_ERROR tag is set to FAIL_ON_WARNINGS
+# then Doxygen will continue running as if WARN_AS_ERROR tag is set to NO, but
+# at the end of the Doxygen process Doxygen will return with a non-zero status.
+# If the WARN_AS_ERROR tag is set to FAIL_ON_WARNINGS_PRINT then Doxygen behaves
+# like FAIL_ON_WARNINGS but in case no WARN_LOGFILE is defined Doxygen will not
+# write the warning messages in between other messages but write them at the end
+# of a run, in case a WARN_LOGFILE is defined the warning messages will be
+# besides being in the defined file also be shown at the end of a run, unless
+# the WARN_LOGFILE is defined as - i.e. standard output (stdout) in that case
+# the behavior will remain as with the setting FAIL_ON_WARNINGS.
+# Possible values are: NO, YES, FAIL_ON_WARNINGS and FAIL_ON_WARNINGS_PRINT.
+# The default value is: NO.
+
+WARN_AS_ERROR          = NO
+
+# The WARN_FORMAT tag determines the format of the warning messages that Doxygen
+# can produce. The string should contain the $file, $line, and $text tags, which
+# will be replaced by the file and line number from which the warning originated
+# and the warning text. Optionally the format may contain $version, which will
+# be replaced by the version of the file (if it could be obtained via
+# FILE_VERSION_FILTER)
+# See also: WARN_LINE_FORMAT
+# The default value is: $file:$line: $text.
+
+WARN_FORMAT            = "$file:$line: $text"
+
+# In the $text part of the WARN_FORMAT command it is possible that a reference
+# to a more specific place is given. To make it easier to jump to this place
+# (outside of Doxygen) the user can define a custom "cut" / "paste" string.
+# Example:
+# WARN_LINE_FORMAT = "'vi $file +$line'"
+# See also: WARN_FORMAT
+# The default value is: at line $line of file $file.
+
+WARN_LINE_FORMAT       = "at line $line of file $file"
+
+# The WARN_LOGFILE tag can be used to specify a file to which warning and error
+# messages should be written. If left blank the output is written to standard
+# error (stderr). In case the file specified cannot be opened for writing the
+# warning and error messages are written to standard error. When as file - is
+# specified the warning and error messages are written to standard output
+# (stdout).
+
+WARN_LOGFILE           =
