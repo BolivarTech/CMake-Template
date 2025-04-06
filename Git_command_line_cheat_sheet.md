@@ -1,5 +1,11 @@
 # Git Command Line Cheat Sheet
 
+## Bare Init Repository
+
+| Command | Description |
+|--|--|
+| git init --bare --initial-branch=main repository-name.git | Create a bare repository in Git with the default branch named |
+
 ## Clone 
 
 | Command | Description |
