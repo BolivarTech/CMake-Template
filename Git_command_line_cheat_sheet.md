@@ -305,3 +305,12 @@ git ctree
 | git submodule deinit \<path_to_submodule> | Remove the submodule |
 | git rm \<path_to_submodule> | Remove the submodule from Git directory |
 
+# Repository Clean and Space Save
+
+| Command | Description |
+|--|--|
+| git gc --aggressive --prune=now | clean up unnecessary files and optimize the local repository |
+| git clean -fd | remove untracked files and directories |
+| git clean -fX | remove ignored files |
+| git prune | emove objects that are no longer reachable from any branch |
+| git pack-refs --all | reduce the size of the refs directory |
