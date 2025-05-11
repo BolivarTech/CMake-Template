@@ -75,6 +75,12 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 6. Wait a few seconds for the command to complete.
 7. If you don't see any errors, you are ready to use Chocolatey! Type choco or choco -? now, or see Getting Started for usage instructions.
 
+To choco remember parameters on upgrade, be sure to set: 
+
+```PowerShell
+choco feature enable -n=useRememberedArgumentsForUpgrades.
+```
+
 Now that Chocolatey is installed on your system, we can proceed to install the other dependencies using PowerShell.
 
 To install Git, Make, LLVN, Doxygen and Python 3.12 used the follow command:
