@@ -78,7 +78,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 To choco remember parameters on upgrade, be sure to set: 
 
 ```PowerShell
-choco feature enable -n=useRememberedArgumentsForUpgrades.
+choco feature enable -n=useRememberedArgumentsForUpgrades
 ```
 
 Now that Chocolatey is installed on your system, we can proceed to install the other dependencies using PowerShell.
